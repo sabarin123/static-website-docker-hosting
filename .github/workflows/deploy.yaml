@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '17'
+          distribution: 'temurin'
 
       # 3️⃣ Build Spring Boot JAR
       - name: Build Spring Boot JAR
