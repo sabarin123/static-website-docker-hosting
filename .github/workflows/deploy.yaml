@@ -46,7 +46,8 @@ jobs:
 
       - name: Push Docker image to ECR
         run: |
-          aws ecr create-repository --repository-name "${ECR_REPO}" --region "${AWS_REGION}" || true
+          aws ecr describe-repositories --repository-names "${ECR_REPO}" --region "${AWS_REGION}" || \
+          aws ecr create-repository --repository-name "${ECR_REPO}" --region "${AWS_REGION}"
           docker push "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}:${IMAGE_TAG}"
 
       - name: Deploy to EC2
