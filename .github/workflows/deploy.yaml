@@ -8,7 +8,7 @@ on:
 
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
-  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+  AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   ECR_REPO: ${{ secrets.ECR_REPO }}
   IMAGE_TAG: ${{ github.sha }}
 
