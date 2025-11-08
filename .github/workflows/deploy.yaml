@@ -64,7 +64,7 @@ jobs:
             # Run new container
             docker run -d --name simple-website-app -p 8080:8080 -v /logs:/logs --restart unless-stopped ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO}:${IMAGE_TAG}
 
-      # 8️⃣ Check CloudWatch logs for errors
+      # 8️⃣ Check CloudWatch logs for errors cloud watch
       - name: Check CloudWatch logs for errors
         run: |
           echo "Fetching last 10 ERROR log entries from CloudWatch..."
